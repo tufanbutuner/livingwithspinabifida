@@ -25,3 +25,39 @@
   padding: 5px;
 }
 
+.register {
+  padding: 16px;
+  align-items: center;
+}
+
+.register h2 {
+  text-align: center;
+}
+
+form {
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 10px 10px;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  padding: 14px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  margin-bottom: 30px;
+}
+
+.register-btn {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  padding: 14px;
+  background-color: #629632;
+  color: #fff;
+  margin-bottom: 30px;
+}
