@@ -6,9 +6,22 @@
   color: #595959;
 }
 
+.navbar {
+  padding: 35px;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #e6e6e6;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbar .links {
+  margin-left: auto;
 }
+
+.navbar a {
+  margin-left: 20px;
+  text-decoration: none;
+  padding: 5px;
+}
+
