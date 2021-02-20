@@ -2,7 +2,7 @@ const mysql = require('mysql2');
 
 class DatabaseController
 {
-    async SelectQuery(sql, parameters = null)
+    static async SelectQuery(sql, parameters = null)
     {
         const pool = mysql.createConnection({ host: 'localhost', user: 'root', port: 3308, database: "spinabifida" })
         const promisePool = pool.promise();
@@ -11,7 +11,7 @@ class DatabaseController
         return rows;
     }
     
-    async InsertUpdateQuery(sql, parameters = null)
+    static async InsertUpdateQuery(sql, parameters = null)
     {
         const pool = mysql.createConnection({ host: 'localhost', user: 'root', port: 3308, database: "spinabifida" })
         const promisePool = pool.promise();
