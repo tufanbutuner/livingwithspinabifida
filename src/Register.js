@@ -17,27 +17,27 @@ class Register extends Component {
     }
 
     render() { return (
-            <div className="register">
-                <h2>Register</h2>
-                <form onSubmit={this.submitHandler}>
-                    <div>
-                        <input type="text" placeholder="First name" name="firstName" onChange={this.changeHandler} required></input>
-                    </div>
-                    <div>
-                        <input type="text" placeholder="Surname" name="surname" onChange={this.changeHandler} required></input>
-                    </div>
-                    <div>
-                        <input type="text" name="username" placeholder="Username" onChange={this.changeHandler} required></input>
-                    </div>
-                    <div>
-                        <input type="email" name="email" placeholder="Email" onChange={this.changeHandler} required></input>
-                    </div>
-                    <div>
-                        <input type="password" name="password" placeholder="Password" onChange={this.changeHandler} required></input>
-                    </div>
-                    <button type="submit" class="register-btn">Register</button>
-                </form>
-            </div>
+        <div className="register">
+            <h2>Register</h2>
+            <form onSubmit={this.submitHandler}>
+                <div>
+                    <input type="text" placeholder="First name" name="firstName" onChange={this.changeHandler} required></input>
+                </div>
+                <div>
+                    <input type="text" placeholder="Surname" name="surname" onChange={this.changeHandler} required></input>
+                </div>
+                <div>
+                    <input type="text" name="username" placeholder="Username" onChange={this.changeHandler} required></input>
+                </div>
+                <div>
+                    <input type="email" name="email" placeholder="Email" onChange={this.changeHandler} required></input>
+                </div>
+                <div>
+                    <input type="password" name="password" placeholder="Password" onChange={this.changeHandler} required></input>
+                </div>
+                <button type="submit" class="register-btn">Register</button>
+            </form>
+        </div>
         );  }
 }
 
