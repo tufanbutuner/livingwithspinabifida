@@ -30,7 +30,7 @@
   align-items: center;
 }
 
-.register h2 {
+.register, .login h2 {
   text-align: center;
 }
 
@@ -51,7 +51,7 @@ input[type="text"], input[type="password"], input[type="email"] {
   margin-bottom: 30px;
 }
 
-.register-btn {
+.register-btn, .login-btn {
   width: 100%;
   border: none;
   border-radius: 10px;
