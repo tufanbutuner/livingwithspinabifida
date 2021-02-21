@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 const axios = require('axios');
 
 class Register extends Component {
-    constructor(props) {
-        super(props)
-    }
 
     changeHandler = (e) => {
         this.setState({[e.target.name]: e.target.value})
