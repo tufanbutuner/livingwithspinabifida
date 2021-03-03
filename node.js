@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session');
 const cors = require('cors')
 const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
@@ -18,4 +19,12 @@ app.post("/register", async (req, res) =>
   results == 1 ? res.status(200).send("Success!") : res.status(400).send("Something went wrong");
 })
 
+app.post("/login", async (req, res) =>
+{
+  var sql = "SELECT * FROM user WHERE username = ?"
+  var parameters = [req.body.username, req.body.password];
+  var results = await dbController.SelectQuery(sql, parameters);
+  const match = await bcrypt.compare(req.body.password, results[0].password);
+  match ? res.status(200).send("Success!") : res.send("Something went wrong");
+})
 app.listen(5000);
