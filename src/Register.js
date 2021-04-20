@@ -32,7 +32,7 @@ class Register extends Component {
                 <div>
                     <input type="password" name="password" placeholder="Password" onChange={this.changeHandler} required></input>
                 </div>
-                <button type="submit" class="register-btn">Register</button>
+                <button type="submit" className="register-btn">Register</button>
             </form>
         </div>
         );  }

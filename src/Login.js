@@ -12,7 +12,7 @@ class Login extends Component {
         var result = await axios.post("http://localhost:5000/login", this.state);
         console.log(result.data);
     }
-
+    
     render() { return (
         <div className="login">
             <h2>Login</h2>
@@ -23,7 +23,7 @@ class Login extends Component {
                 <div>
                     <input type="password" name="password" placeholder="Password" onChange={this.changeHandler} required></input>
                 </div>
-                <button type="submit" class="login-btn">Login</button>
+                <button type="submit" className="login-btn" onClick={this.submitHandler}>Login</button>
             </form>
         </div>
         );  }
