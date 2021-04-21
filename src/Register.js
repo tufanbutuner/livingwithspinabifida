@@ -1,41 +1,49 @@
-import React, { Component } from 'react';
+import { useState } from 'react';
+import { useHistory } from 'react-router';
 const axios = require('axios');
 
-class Register extends Component {
+const Register = () => {
+    const history = useHistory();
+    const [user, setUser] = useState({});
+    const token = sessionStorage.getItem('token');
 
-    changeHandler = (e) => {
-        this.setState({[e.target.name]: e.target.value})
+    const changeHandler = (e) => {
+        setUser({ ...user, [e.target.name]: e.target.value})
     }
 
-    submitHandler = async e => {
+    const submitHandler = async e => {
         e.preventDefault();
-        var result = await axios.post("http://localhost:5000/register", this.state);
+        var result = await axios.post("http://localhost:5000/register", user);
         console.log(result.data);
+        if (result) {
+            sessionStorage.setItem('token', JSON.stringify(result));
+            history.push('/profile');
+        }
     }
 
-    render() { return (
+    return (
         <div className="register">
             <h2>Register</h2>
-            <form onSubmit={this.submitHandler}>
+            <form onSubmit={submitHandler}>
                 <div>
-                    <input type="text" placeholder="First name" name="firstName" onChange={this.changeHandler} required></input>
+                    <input type="text" placeholder="First name" name="firstName" onChange={changeHandler} required></input>
                 </div>
                 <div>
-                    <input type="text" placeholder="Surname" name="surname" onChange={this.changeHandler} required></input>
+                    <input type="text" placeholder="Surname" name="surname" onChange={changeHandler} required></input>
                 </div>
                 <div>
-                    <input type="text" name="username" placeholder="Username" onChange={this.changeHandler} required></input>
+                    <input type="text" name="username" placeholder="Username" onChange={changeHandler} required></input>
                 </div>
                 <div>
-                    <input type="email" name="email" placeholder="Email" onChange={this.changeHandler} required></input>
+                    <input type="email" name="email" placeholder="Email" onChange={changeHandler} required></input>
                 </div>
                 <div>
-                    <input type="password" name="password" placeholder="Password" onChange={this.changeHandler} required></input>
+                    <input type="password" name="password" placeholder="Password" onChange={changeHandler} required></input>
                 </div>
                 <button type="submit" className="register-btn">Register</button>
             </form>
         </div>
-        );  }
+    )
 }
 
 export default Register;
