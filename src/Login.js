@@ -1,32 +1,42 @@
-import React, { Component } from 'react';
+import session from 'express-session';
+import React, { Component, useState } from 'react';
+import { useHistory } from 'react-router';
+import ChildComponent from './LoggedIn';
 const axios = require('axios');
 
-class Login extends Component {
+const Login = () => {
+    const history = useHistory();
+    const [user, setUser] = useState({});
+    const token = sessionStorage.getItem('token');
 
-    changeHandler = (e) => {
-        this.setState({[e.target.name]: e.target.value})
+    const changeHandler = (e) => {
+        setUser({ ...user, [e.target.name]: e.target.value})
     }
 
-    submitHandler = async e => {
+    const submitHandler = async e => {
         e.preventDefault();
-        var result = await axios.post("http://localhost:5000/login", this.state);
+        var result = await axios.post("http://localhost:5000/login", user);
         console.log(result.data);
+        if (result) {
+            sessionStorage.setItem('token', JSON.stringify(result));
+            history.push('/profile');
+        }
     }
     
-    render() { return (
+    return ( token ? <ChildComponent />:
         <div className="login">
             <h2>Login</h2>
-            <form onSubmit={this.submitHandler}>
+            <form onSubmit={submitHandler}>
                 <div>
-                    <input type="text" name="username" placeholder="Username" onChange={this.changeHandler} required></input>
+                    <input type="text" name="username" placeholder="Username" onChange={changeHandler} required></input>
                 </div>
                 <div>
-                    <input type="password" name="password" placeholder="Password" onChange={this.changeHandler} required></input>
+                    <input type="password" name="password" placeholder="Password" onChange={changeHandler} required></input>
                 </div>
-                <button type="submit" className="login-btn" onClick={this.submitHandler}>Login</button>
+                <button type="submit" className="login-btn" onClick={submitHandler}>Login</button>
             </form>
         </div>
-        );  }
+    );
 }
 
 export default Login;
