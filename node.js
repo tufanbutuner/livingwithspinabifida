@@ -1,12 +1,12 @@
 const express = require('express');
-const session = require('express-session');
+const dotenv = require('dotenv');
 const cors = require('cors')
+const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const dbController = require('./Controller/DatabaseController');
-
 const app = express();
+dotenv.config();
 
 app.use(cors({
   origin: "http://localhost:3000",
@@ -14,8 +14,8 @@ app.use(cors({
   credentials: true
 }));
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json())
+app.use(express.urlencoded({ extended: true })); //body parser no longer required
+app.use(express.json())
 
 app.post("/register", async (req, res) => {
   var sql = "INSERT INTO user (firstName, lastName, username, password, email) VALUES (?, ?, ?, ?, ?)"
@@ -32,9 +32,9 @@ app.post("/login", async (req, res, next) => {
   const match = await bcrypt.compare(req.body.password, results[0].password);
 
   if (match) {
-    // req.session.username = results;
-    // console.log(req.session.username);
-    res.send(results);
+    const token = jwt.sign({ username: req.body.username }, process.env.TOKEN_SECRET);
+    res.header('auth-token', token).send(token);
+    // res.send(results);
   } else {
     res.send("Something went wrong, please try again.");
   }
@@ -43,12 +43,4 @@ app.post("/login", async (req, res, next) => {
   // console.log(req.session.username);
 });
 
-// app.get('/', (req, res) => {
-//   // res.render('home', {message : 'Welcome, ' + req.session.username});
-//   res.status(200).send({message : 'Welcome, ' + req.session.username});
-// });
-
-// app.post("/profile", (req, res) => {
-//   res.render('home', {message : 'Welcome, ' + req.session.username});
-// })
 app.listen(5000);
