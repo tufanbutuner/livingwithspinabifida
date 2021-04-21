@@ -1,7 +1,6 @@
-import session from 'express-session';
-import React, { Component, useState } from 'react';
+import { useState } from 'react';
 import { useHistory } from 'react-router';
-import ChildComponent from './LoggedIn';
+import LoggedIn from './LoggedIn';
 const axios = require('axios');
 
 const Login = () => {
@@ -23,7 +22,7 @@ const Login = () => {
         }
     }
     
-    return ( token ? <ChildComponent />:
+    return ( token ? <LoggedIn /> :
         <div className="login">
             <h2>Login</h2>
             <form onSubmit={submitHandler}>
