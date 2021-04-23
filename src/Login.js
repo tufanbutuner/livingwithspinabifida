@@ -18,7 +18,7 @@ const Login = () => {
         console.log(result.data);
         if (result) {
             sessionStorage.setItem('token', JSON.stringify(result));
-            history.push('/profile');
+            history.push('/dashboard');
         }
     }
     
