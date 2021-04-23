@@ -5,6 +5,7 @@ import Login from '../Login';
 import Profile from '../Profile';
 import Landing from '../Landing';
 import Dashboard from '../Dashboard';
+import ProtectedRoute from './ProtectedRoute';
 
 function Routes() {
     return (
@@ -12,8 +13,8 @@ function Routes() {
             <Route exact path="/" component={Landing} />
             <Route path="/register" component={Register} />
             <Route path="/login" component={Login} />
-            <Route path="/profile" component={Profile} />
-            <Route path="/dashboard" component={Dashboard} />
+            <ProtectedRoute path="/profile" component={Profile}/>
+            <ProtectedRoute path="/" component={Dashboard} />
           </Switch>
     )
 }
