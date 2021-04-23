@@ -31,16 +31,17 @@ app.post("/login", async (req, res, next) => {
   var results = await dbController.SelectQuery(sql, parameters);
   const match = await bcrypt.compare(req.body.password, results[0].password);
 
-  if (match) {
-    const token = jwt.sign({ username: req.body.username }, process.env.TOKEN_SECRET);
-    res.header('auth-token', token).send(token);
-    // res.send(results);
-  } else {
-    res.send("Something went wrong, please try again.");
-  }
-  // match ? res.status(200).send("Success!") : res.send("Something went wrong");
-  console.log(match);
+  match ? res.status(200).send("Success!") : res.send("Something went wrong");
+
+  // if (match) {
+  //   // const token = jwt.sign({ username: req.body.username }, process.env.TOKEN_SECRET);
+  //   // res.header('auth-token', token).send(token);
+  //   res.send(results);
+  // } else {
+  //   res.send("Something went wrong, please try again.");
+  // }
+  
+  // console.log(match);
   // console.log(req.session.username);
 });
-
 app.listen(5000);
