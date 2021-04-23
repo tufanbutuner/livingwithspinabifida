@@ -61,3 +61,32 @@ input[type="text"], input[type="password"], input[type="email"] {
   color: #fff;
   margin-bottom: 30px;
 }
+
+.jumbotron {
+  align-items: center;
+  text-align: center;
+  padding: 100px;
+  background-color: #629632;
+}
+
+.jumbotron h1, p {
+  color: white;
+}
+
+.home {
+  align-items: center;
+  text-align: center;
+  padding: 100px;
+}
+
+.dashboard {
+  align-items: center;
+  text-align: center;
+  padding: 60px;
+}
+
+.login {
+  align-items: center;
+  text-align: center;
+  padding: 60px;
+}
