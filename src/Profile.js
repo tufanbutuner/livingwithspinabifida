@@ -1,7 +1,7 @@
 function Profile() {
     return (
         <div className="profile">
-            <h2>Profile Page</h2>
+            <h2>Welcome back User</h2>
         </div>
     );
 }
