@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { isUserAuthenticated } from '../src/routes/ProtectedRoute';
 
 function Navbar() {
     return (
@@ -6,8 +7,8 @@ function Navbar() {
             <h1>Living with Spina Bifida</h1>
                 <div className="links">
                 <Link to="/">Home</Link>
-                <Link to="/register">Register</Link>
-                <Link to="/login">Login</Link>
+                {(isUserAuthenticated() === true ? null : <Link to="/register">Register</Link>)}
+                {(isUserAuthenticated() === true ? <Link to="/login">Logout</Link> : <Link to="/login">Login</Link>)}
                 <Link to="/profile">Profile</Link>
                 </div>
         </nav>
