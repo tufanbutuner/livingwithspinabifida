@@ -6,7 +6,7 @@ const axios = require('axios');
 const Login = () => {
     const history = useHistory();
     const [user, setUser] = useState({});
-    const token = sessionStorage.getItem('token');
+    const username = localStorage.getItem('username');
 
     const changeHandler = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value})
@@ -15,14 +15,13 @@ const Login = () => {
     const submitHandler = async e => {
         e.preventDefault();
         var result = await axios.post("http://localhost:5000/login", user);
-        console.log(result.data);
         if (result) {
-            sessionStorage.setItem('token', JSON.stringify(result));
-            history.push('/dashboard');
+            localStorage.setItem('username', result.data.username);
+            history.push('/profile');
         }
     }
     
-    return ( token ? <LoggedIn /> :
+    return ( username ? <LoggedIn /> :
         <div className="login">
             <h2>Login</h2>
             <form onSubmit={submitHandler}>
