@@ -5,7 +5,7 @@ function LoggedIn() {
     const history = useHistory();
 
     const logout = () => {
-        sessionStorage.removeItem('token');
+        localStorage.removeItem('username');
         history.push('/login');
     }
 
