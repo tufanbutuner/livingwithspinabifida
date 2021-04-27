@@ -1,7 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors')
-const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const cookieParser = require('cookie-parser');
 const dbController = require('./Controller/DatabaseController');
@@ -25,23 +24,13 @@ app.post("/register", async (req, res) => {
   results == 1 ? res.status(200).send("Success!") : res.status(400).send("Something went wrong");
 })
 
-app.post("/login", async (req, res, next) => {
-  var sql = "SELECT * FROM user WHERE username = ?"
+app.post("/login", async (req, res) => {
+  var sql = "SELECT * FROM user WHERE username = ?";
   var parameters = [req.body.username, req.body.password];
   var results = await dbController.SelectQuery(sql, parameters);
   const match = await bcrypt.compare(req.body.password, results[0].password);
 
-  match ? res.status(200).send("Success!") : res.send("Something went wrong");
-
-  // if (match) {
-  //   // const token = jwt.sign({ username: req.body.username }, process.env.TOKEN_SECRET);
-  //   // res.header('auth-token', token).send(token);
-  //   res.send(results);
-  // } else {
-  //   res.send("Something went wrong, please try again.");
-  // }
-  
-  // console.log(match);
-  // console.log(req.session.username);
+  // checking if password matches one in the database
+  match ? res.send(results[0]) : res.send("Something went wrong");
 });
 app.listen(5000);
