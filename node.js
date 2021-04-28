@@ -5,7 +5,6 @@ const bcrypt = require('bcrypt');
 const cookieParser = require('cookie-parser');
 const dbController = require('./Controller/DatabaseController');
 const app = express();
-dotenv.config();
 
 app.use(cors({
   origin: "http://localhost:3000",
@@ -32,12 +31,11 @@ app.post("/login", async (req, res) => {
   var sql = "SELECT * FROM user WHERE username = ?";
   // taking username and password from front end with req.body and putting them into an array
   var parameters = [req.body.username, req.body.password];
-  //
   var results = await dbController.SelectQuery(sql, parameters);
   // using bcrypt to compare password written on front-end to password in the db
   const match = await bcrypt.compare(req.body.password, results[0].password);
 
   // checking if password matches one in the database, if so send results[0] back (row of user info from the db)
-  match ? res.send(results[0]) : res.send("Something went wrong");
+  match ? res.send(results[0]) : res.send("Username/password combination are incorrect.");
 });
 app.listen(5000);
