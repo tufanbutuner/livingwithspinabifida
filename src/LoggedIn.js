@@ -6,6 +6,8 @@ function LoggedIn() {
 
     const logout = () => {
         localStorage.removeItem('username');
+        localStorage.removeItem('firstName');
+        localStorage.removeItem('lastName');
         history.push('/login');
     }
 
