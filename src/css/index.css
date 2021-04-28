@@ -90,3 +90,39 @@ input[type="text"], input[type="password"], input[type="email"] {
   text-align: center;
   padding: 60px;
 }
+
+/* Profile page */
+#username {
+  text-align: center;
+  padding-top: 60px;
+}
+#fullName {
+  text-align: center;
+}
+
+.profile {
+  align-items: center;
+}
+
+#profileCard {
+  width: 100%;
+  background-color: #66a1ff;
+  padding: 100px;
+}
+
+.profileTitle {
+  margin-bottom: 3px;
+  color: #fff;
+  font-weight: 1000;
+  font-size: 40pt;
+}
+
+.profileSubtitle {
+  font-size: 15pt;
+  color: #fff;
+  margin-bottom: 50px;
+}
+
+.profileBio {
+  font-size: 18pt;
+}
