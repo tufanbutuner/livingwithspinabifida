@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router';
+import Alert from 'react-bootstrap/Alert'
 import LoggedIn from './LoggedIn';
 const axios = require('axios');
 
@@ -14,10 +15,17 @@ const Login = () => {
 
     const submitHandler = async e => {
         e.preventDefault();
+        // sending an axios post to node /login endpoint
         var result = await axios.post("http://localhost:5000/login", user);
-        if (result) {
-            localStorage.setItem('username', result.data.username);
+        var data = result.data;
+        console.log(data);
+        if (data) {
+            localStorage.setItem('username', data.username);
+            localStorage.setItem('firstName', data.firstName);
+            localStorage.setItem('lastName', data.lastName);
             history.push('/profile');
+        } else {
+            <Alert variant="danger">Incorrect username or password. Please try again</Alert>
         }
     }
     
