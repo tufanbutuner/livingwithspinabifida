@@ -1,4 +1,5 @@
 import Card from 'react-bootstrap/Card'
+import Post from './Post';
 const axios = require('axios');
 
 function Profile() {
@@ -14,6 +15,10 @@ function Profile() {
                     <Card.Text className="profileBio"> User bio goes here.</Card.Text>
                 </Card.Body>
             </Card>
+
+            <div className="userPosts">
+                <Post />
+            </div>
         </div>
     );
 }
