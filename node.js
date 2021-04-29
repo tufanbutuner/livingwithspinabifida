@@ -13,6 +13,7 @@ app.use(cors({
 }));
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true })); //body parser no longer required
+
 app.use(express.json())
 
 app.post("/register", async (req, res) => {
@@ -38,4 +39,13 @@ app.post("/login", async (req, res) => {
   // checking if password matches one in the database, if so send results[0] back (row of user info from the db)
   match ? res.send(results[0]) : res.send("Username/password combination are incorrect.");
 });
+
+app.post('/create', async (req, res) => {
+  // SQL statement to post the content from the user's post into the db
+  var sql = "INSERT INTO post (postTitle, postContent) VALUES (?,?)"
+  // this is how we access the variable from the front end 
+  var parameters = [req.body.title, req.body.content];
+  var results = await dbController.InsertUpdateQuery(sql, parameters);
+
+})
 app.listen(5000);
