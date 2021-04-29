@@ -6,6 +6,8 @@
   color: #595959;
 }
 
+/* NAVBAR */
+
 .navbar {
   padding: 35px;
   display: flex;
@@ -24,6 +26,8 @@
   text-decoration: none;
   padding: 5px;
 }
+
+/* REGISTER PAGE */
 
 .register {
   padding: 16px;
@@ -91,7 +95,8 @@ input[type="text"], input[type="password"], input[type="email"] {
   padding: 60px;
 }
 
-/* Profile page */
+/* PROFILE PAGE */
+
 #username {
   text-align: center;
   padding-top: 60px;
@@ -125,4 +130,29 @@ input[type="text"], input[type="password"], input[type="email"] {
 
 .profileBio {
   font-size: 18pt;
+}
+
+/* POSTS */
+
+.uploadPost {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.uploadPost input {
+  width: 50%;
+  height: 20px;
+  margin: 10px;
+}
+
+textarea {
+  width: 50%;
+  height: 100px;
+}
+
+#postSubmit {
+  margin-top: 10px;
 }
