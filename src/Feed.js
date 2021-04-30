@@ -17,13 +17,13 @@ function Feed() {
     return (
 
         <div className="feed">
-            <h1> All posts</h1>
+            <h1 className="allPosts"> All posts</h1>
             {list.map((posts) => {
                 return (<div className="post">
-                    <h1>{posts.username}</h1>
-                    <h2>{posts.postTitle}</h2>
-                    <p>{posts.postContent}</p>
-                    <p>{posts.dateCreated}</p>
+                    <h1 className="postUsername">@{posts.username}</h1>
+                    <h2 className="postTitle">{posts.postTitle}</h2>
+                    <p className="postContent">{posts.postContent}</p>
+                    <p className="postDate">{posts.dateCreated}</p>
                 </div>
                 )
             })}
