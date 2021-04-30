@@ -20,6 +20,7 @@ const Login = () => {
         var data = result.data;
         console.log(data);
         if (data) {
+            localStorage.setItem('userId', data.userId);
             localStorage.setItem('username', data.username);
             localStorage.setItem('firstName', data.firstName);
             localStorage.setItem('lastName', data.lastName);
