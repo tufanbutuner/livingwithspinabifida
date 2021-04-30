@@ -41,15 +41,15 @@ app.post("/login", async (req, res) => {
 
 app.post('/create', async (req, res) => {
   // SQL statement to post the content from the user's post into the db
-  var sql = "INSERT INTO post (postTitle, postContent) VALUES (?,?)"
+  var sql = "INSERT INTO post (userId, postTitle, postContent) VALUES (?,?,?)"
   // this is how we access the variable from the front end 
-  var parameters = [req.body.title, req.body.content];
+  var parameters = [req.body.userId, req.body.title, req.body.content];
   var results = await dbController.InsertUpdateQuery(sql, parameters);
 })
 
 app.get('/getPosts', async (req, res) => {
-  // selecting all information from post table in the db
-  var sql = "SELECT * FROM post"
+  // INNER JOIN to display username, post title, content and date from user and posts tables
+  var sql = "SELECT post.postId, user.userId, user.username, post.postTitle, post.postContent, post.dateCreated FROM user INNER JOIN post ON user.userId = post.userId";
   var results = await dbController.SelectQuery(sql);
   res.send(results);
 });
