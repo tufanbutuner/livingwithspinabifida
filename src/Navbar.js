@@ -10,6 +10,7 @@ function Navbar() {
                 {(isUserAuthenticated() === true ? null : <Link to="/register">Register</Link>)}
                 {(isUserAuthenticated() === true ? <Link to="/login">Logout</Link> : <Link to="/login">Login</Link>)}
                 <Link to="/profile">Profile</Link>
+                <Link to="/support">Support</Link>
                 </div>
         </nav>
     );
