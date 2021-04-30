@@ -26,7 +26,7 @@ const Login = () => {
             localStorage.setItem('lastName', data.lastName);
             history.push('/profile');
         } else {
-            <Alert variant="danger">Incorrect username or password. Please try again</Alert>
+            alert('Incorrect username or password. Please try again');
         }
     }
     
