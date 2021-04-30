@@ -13,9 +13,6 @@ function Feed() {
         });
     }, []);
     // we add an empty array so the useEffect only makes the request once rather than infinitely
-    
-    var username = localStorage.getItem('username');
-    var firstName = localStorage.getItem('firstName');
 
     return (
 
@@ -23,13 +20,13 @@ function Feed() {
             <h1> All posts</h1>
             {list.map((posts) => {
                 return (<div className="post">
-                    <h1>{posts.userId}</h1>
+                    <h1>{posts.username}</h1>
                     <h2>{posts.postTitle}</h2>
                     <p>{posts.postContent}</p>
+                    <p>{posts.dateCreated}</p>
                 </div>
                 )
             })}
-           
         </div>
     )
 }
