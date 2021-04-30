@@ -83,12 +83,6 @@ input[type="text"], input[type="password"], input[type="email"] {
   padding: 100px;
 }
 
-.dashboard {
-  align-items: center;
-  text-align: center;
-  padding: 60px;
-}
-
 .login {
   align-items: center;
   text-align: center;
@@ -155,4 +149,24 @@ textarea {
 
 #postSubmit {
   margin-top: 10px;
+}
+
+/* FEED POSTS */
+
+.post {
+  border-style:solid;
+  border-radius: 10px;
+  border-width: 2px;
+  border-color: #d4d4d4;
+  padding: 20px;
+  margin: 50px;
+}
+
+.post p {
+  color: black;
+}
+
+.postFirstName {
+  font-size: 20px;
+  font-weight: 900;
 }
