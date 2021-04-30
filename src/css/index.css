@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
   margin: 0;
-  font-family: "Comfortaa";
-  color: #595959;
+  font-family: 'Inter', sans-serif;
+  color: #8753ff;
 }
+
 
 /* NAVBAR */
 
@@ -162,6 +163,11 @@ textarea {
   margin: 50px;
 }
 
+.allPosts {
+  text-align: center;
+  margin-top: 50px;
+}
+
 .post p {
   color: black;
 }
@@ -169,4 +175,21 @@ textarea {
 .postFirstName {
   font-size: 20px;
   font-weight: 900;
+}
+
+.postUsername {
+  font-weight: 800;
+  font-size: 20px;
+  color: #000;
+
+}
+
+.postTitle {
+  font-weight: 500;
+  margin-top: 2px;
+  margin-bottom: 6px;
+}
+
+.postContent {
+  margin-bottom: 10px;
 }
