@@ -15,7 +15,7 @@ function Feed() {
     // we add an empty array so the useEffect only makes the request once rather than infinitely
 
     return (
-
+        // mapping out all posts onto the feed
         <div className="feed">
             <h1 className="allPosts"> All posts</h1>
             {list.map((posts) => {
