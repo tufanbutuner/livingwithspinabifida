@@ -1,5 +1,4 @@
 const express = require('express');
-const dotenv = require('dotenv');
 const cors = require('cors')
 const bcrypt = require('bcrypt');
 const cookieParser = require('cookie-parser');
@@ -46,6 +45,12 @@ app.post('/create', async (req, res) => {
   // this is how we access the variable from the front end 
   var parameters = [req.body.title, req.body.content];
   var results = await dbController.InsertUpdateQuery(sql, parameters);
-
 })
+
+app.get('/getPosts', async (req, res) => {
+  // selecting all information from post table in the db
+  var sql = "SELECT * FROM post"
+  var results = await dbController.SelectQuery(sql);
+  res.send(results);
+});
 app.listen(5000);
