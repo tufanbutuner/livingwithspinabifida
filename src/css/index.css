@@ -193,3 +193,10 @@ textarea {
 .postContent {
   margin-bottom: 10px;
 }
+
+/* SUPPORT PAGE */
+
+.supportHeader {
+  text-align: center;
+  margin-top: 50px;
+}
