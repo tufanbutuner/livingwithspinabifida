@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router';
-import Alert from 'react-bootstrap/Alert'
 import LoggedIn from './LoggedIn';
 const axios = require('axios');
 
@@ -24,6 +23,7 @@ const Login = () => {
             localStorage.setItem('username', data.username);
             localStorage.setItem('firstName', data.firstName);
             localStorage.setItem('lastName', data.lastName);
+            localStorage.setItem('bio', data.bio);
             history.push('/profile');
         } else {
             alert('Incorrect username or password. Please try again');
