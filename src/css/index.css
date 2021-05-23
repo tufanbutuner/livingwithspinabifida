@@ -107,7 +107,9 @@ input[type="text"], input[type="password"], input[type="email"] {
 #profileCard {
   width: 100%;
   background-color: #66a1ff;
-  padding: 100px;
+  /* padding: 100px; */
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .profileTitle {
@@ -125,6 +127,10 @@ input[type="text"], input[type="password"], input[type="email"] {
 
 .profileBio {
   font-size: 18pt;
+}
+
+.profileTitle, .profileSubtitle, .profileBio {
+  padding-left: 100px;
 }
 
 /* POSTS */
