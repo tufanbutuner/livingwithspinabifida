@@ -17,13 +17,13 @@ const Login = () => {
         // sending an axios post to node /login endpoint
         var result = await axios.post("http://localhost:5000/login", user);
         var data = result.data;
-        console.log(data);
-        if (data) {
+        console.log(data)
+
+        if (data.password != undefined ) {
             localStorage.setItem('userId', data.userId);
             localStorage.setItem('username', data.username);
             localStorage.setItem('firstName', data.firstName);
             localStorage.setItem('lastName', data.lastName);
-            localStorage.setItem('bio', data.bio);
             history.push('/profile');
         } else {
             alert('Incorrect username or password. Please try again');
