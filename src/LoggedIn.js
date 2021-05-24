@@ -5,6 +5,7 @@ function LoggedIn() {
     const history = useHistory();
 
     const logout = () => {
+        localStorage.removeItem('userId');
         localStorage.removeItem('username');
         localStorage.removeItem('firstName');
         localStorage.removeItem('lastName');
