@@ -20,7 +20,7 @@ app.post("/register", async (req, res) => {
   const hashedPassword = await bcrypt.hash(req.body.password, 10);
   var parameters = [req.body.firstName, req.body.surname, req.body.username, hashedPassword, req.body.email]
   var results = await dbController.InsertUpdateQuery(sql, parameters);
-  results == 1 ? res.status(200).send("Success!") : res.status(400).send("Something went wrong");
+  results ? res.send('Success!') : res.send("Something went wrong");
 })
 
 // creating the login endpoint to connect with the front-end and database
@@ -56,5 +56,11 @@ app.get('/users', async (req, res) => {
   var results = await dbController.SelectQuery(sql);
   res.send(results);
 });
+
+app.post('/comment', async (req, res) => {
+  var sql = "INSERT INTO comment (postId, userId, commentContent) VALUES (?,?,?)"
+  var parameters = [req.body.postId, req.body.userId, req.body.content];
+  var results = await dbController.InsertUpdateQuery(sql, parameters);
+})
 
 app.listen(5000);

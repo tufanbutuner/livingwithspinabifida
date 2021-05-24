@@ -5,7 +5,6 @@ const axios = require('axios');
 const Register = () => {
     const history = useHistory();
     const [user, setUser] = useState({});
-    const token = sessionStorage.getItem('token');
 
     const changeHandler = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value})
@@ -14,11 +13,8 @@ const Register = () => {
     const submitHandler = async e => {
         e.preventDefault();
         var result = await axios.post("http://localhost:5000/register", user);
-        console.log(result.data);
-        if (result) {
-            sessionStorage.setItem('token', JSON.stringify(result));
-            history.push('/profile');
-        }
+        console.log(result);
+        history.push('/registered');
     }
 
     return (
@@ -40,7 +36,7 @@ const Register = () => {
                 <div>
                     <input type="password" name="password" placeholder="Password" onChange={changeHandler} required></input>
                 </div>
-                <button type="submit" className="register-btn">Register</button>
+                <button type="submit" className="register-btn" onClick={submitHandler}>Register</button>
             </form>
         </div>
     )

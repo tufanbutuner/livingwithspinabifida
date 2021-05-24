@@ -9,12 +9,14 @@ import LoggedIn from "../LoggedIn";
 import Feed from "../Feed";
 import Support from '../Support';
 import UserList from "../UserList";
+import Registered from '../Registered';
 
 function Routes() {
     return (
         <Switch>
             <Route exact path="/" render={() => (isUserAuthenticated() === true ? <Feed /> : <Landing />)} />
-            <Route path="/register" render={() => (isUserAuthenticated() === true ? <LoggedIn /> : <Register />)} />
+            <Route exact path="/register" component={Register} />
+            <Route path="/registered" component={Registered} />
             <Route path="/login" component={Login} />
             <Route path="/support" component={Support} />
             <ProtectedRoute path="/profile" component={Profile} />
