@@ -3,7 +3,7 @@
 * {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  color: #8753ff;
+  color: #87CEFA;
 }
 
 
@@ -15,11 +15,15 @@
   align-items: center;
   max-width: 100%;
   margin: 0 auto;
-  background-color: #e6e6e6;
+  background-color: #87CEFA;
 }
 
 .navbar .links {
   margin-left: auto;
+}
+
+.navbar * {
+  color: white;
 }
 
 .navbar a {
@@ -106,7 +110,7 @@ input[type="text"], input[type="password"], input[type="email"] {
 
 #profileCard {
   width: 100%;
-  background-color: #66a1ff;
+  background-color: #87CEFA;
   /* padding: 100px; */
   padding-top: 100px;
   padding-bottom: 100px;
