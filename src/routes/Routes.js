@@ -8,6 +8,7 @@ import { isUserAuthenticated } from './ProtectedRoute';
 import LoggedIn from "../LoggedIn";
 import Feed from "../Feed";
 import Support from '../Support';
+import UserList from "../UserList";
 
 function Routes() {
     return (
@@ -17,6 +18,7 @@ function Routes() {
             <Route path="/login" component={Login} />
             <Route path="/support" component={Support} />
             <ProtectedRoute path="/profile" component={Profile} />
+            <ProtectedRoute path="/users" component={UserList} />
             <ProtectedRoute path="/" component={Feed} />
         </Switch>
     )
