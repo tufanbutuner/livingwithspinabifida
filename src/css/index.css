@@ -75,7 +75,7 @@ input[type="text"], input[type="password"], input[type="email"] {
   align-items: center;
   text-align: center;
   padding: 100px;
-  background-color: #629632;
+  background-color: #87CEFA;
 }
 
 .jumbotron h1, p {
@@ -168,7 +168,7 @@ textarea {
   border-style:solid;
   border-radius: 10px;
   border-width: 2px;
-  border-color: #d4d4d4;
+  border-color: #87CEFA;
   padding: 20px;
   margin: 50px;
 }
@@ -190,8 +190,7 @@ textarea {
 .postUsername {
   font-weight: 800;
   font-size: 20px;
-  color: #000;
-
+  color: #1E90FF;
 }
 
 .postTitle {
@@ -202,6 +201,19 @@ textarea {
 
 .postContent {
   margin-bottom: 10px;
+}
+
+/* USER LIST */
+.users {
+  text-align: center;
+
+  padding: 20px;
+  margin-top: 25px;
+}
+
+.userList {
+  text-align: center;
+  margin-top: 50px;
 }
 
 /* SUPPORT PAGE */
