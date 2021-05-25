@@ -2,13 +2,13 @@
 
 Living With Spina Bifida (LWSB) is a social media support group for people with Spina Bifida. The purpose of this application is to provide users with a centralised platform where they can discuss their condition and get support through other people or resources.
 
-## Running the code
+## Running the code: node and npm
+Assuming Node and NPM are installed on your machine:
 
-To get started, install Node then run this code in the terminal:
-
-```javascript
-npm i axios bcrypt body-parser concurrently cors express mysql2 nodemon react react-bootstrap react-dom react-router-dom react-script
-```
+1. Download the code
+2. Navigate inside the project folder on terminal, where you will see a package.json file
+3. Do an npm install for installing all the project dependencies
+4. Do an npm install -g nodemon for installing all the project dependencies
 
 This will install all the required packages to run the application.
 
