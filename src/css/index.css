@@ -241,6 +241,11 @@ textarea {
 .supportHeader {
   text-align: center;
   margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.supportText {
+  color: #1E90FF;
 }
 
 /* COMMENTS MODAL */
