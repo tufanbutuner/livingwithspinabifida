@@ -4,7 +4,7 @@ class DatabaseController
 {
     static async SelectQuery(sql, parameters = null)
     {
-        const pool = mysql.createConnection({ host: 'localhost', user: 'root', port: 3308, database: "spinabifida" })
+        const pool = mysql.createConnection({ host: 'remotemysql.com', user: '6KWAbGb9JQ', password: '2E47QGs5Yk', port: 3306, database: "6KWAbGb9JQ" })
         const promisePool = pool.promise();
         let [rows, fields] = await promisePool.query(sql, parameters);
         pool.end();
@@ -13,7 +13,7 @@ class DatabaseController
     
     static async InsertUpdateQuery(sql, parameters = null)
     {
-        const pool = mysql.createConnection({ host: 'localhost', user: 'root', port: 3308, database: "spinabifida" })
+        const pool = mysql.createConnection({ host: 'remotemysql.com', user: '6KWAbGb9JQ', password: '2E47QGs5Yk', port: 3306, database: "6KWAbGb9JQ" })
         const promisePool = pool.promise();
         let [rows, fields] = await promisePool.query(sql, parameters);
         pool.end();
