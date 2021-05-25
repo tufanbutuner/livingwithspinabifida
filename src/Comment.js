@@ -34,13 +34,9 @@ const Comment = (props) =>
         <Modal.Header closeButton>
           <Modal.Title>Create Comment</Modal.Title>
         </Modal.Header>
-                <Modal.Body>
-            <p class="comment-text">Leave a comment on this post</p>
-                <input
-                    onChange={(e) => {
-                        setContent(e.target.value);
-                        }}
-                />
+            <Modal.Body>
+              <p class="comment-text">Leave a comment on this post</p>
+                <input onChange={(e) => {setContent(e.target.value);}}/>
             </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>Close</Button>
