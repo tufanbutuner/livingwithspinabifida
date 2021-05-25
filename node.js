@@ -32,13 +32,6 @@ app.post("/login", async (req, res) => {
   match ? res.send(results[0]) : res.send("Username/password combination are incorrect.");
 });
 
-app.put('/bio', async (req, res) => {
-  var sql = "UPDATE user SET bio = ? WHERE userId = ?";
-  var parameters = [req.body.bio, req.body.userId];
-  var results = await dbController.InsertUpdateQuery(sql, parameters);
-  res.status(200).send('Bio updated.');
-});
-
 app.post('/create', async (req, res) => {
   var sql = "INSERT INTO post (userId, postTitle, postContent) VALUES (?,?,?)"
   var parameters = [req.body.userId, req.body.title, req.body.content];
@@ -61,7 +54,7 @@ app.post('/comment', async (req, res) => {
   var sql = "INSERT INTO comment (postId, userId, commentContent) VALUES (?,?,?)"
   var parameters = [req.body.postId, req.body.userId, req.body.content];
   var results = await dbController.InsertUpdateQuery(sql, parameters);
-})
+});
 
 app.get('/getComments', async (req, res) => {
   var sql = "SELECT comment.postId, user.userId, user.username, comment.commentContent FROM user INNER JOIN comment on user.userId = comment.userId";
