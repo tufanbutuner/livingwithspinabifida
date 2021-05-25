@@ -2,6 +2,18 @@
 
 Living With Spina Bifida (LWSB) is a social media support group for people with Spina Bifida. The purpose of this application is to provide users with a centralised platform where they can discuss their condition and get support through other people or resources.
 
+## Install Node
+If Node is not installed on your machine, refer to this link to download it on your system [https://nodejs.org/en/download/] (https://nodejs.org/en/download/)
+
+npm is installed along with Node, to check if Node has successfully installed run:
+```
+node -v
+```
+To confirm that you have npm installed you can run this command in your terminal:
+```
+npm -v
+```
+
 ## Running the code: node and npm
 Assuming Node and NPM are installed on your machine:
 
