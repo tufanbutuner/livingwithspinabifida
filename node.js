@@ -63,4 +63,10 @@ app.post('/comment', async (req, res) => {
   var results = await dbController.InsertUpdateQuery(sql, parameters);
 })
 
+app.get('/getComments', async (req, res) => {
+  var sql = "SELECT comment.postId, user.userId, user.username, comment.commentContent FROM user INNER JOIN comment on user.userId = comment.userId";
+  var results = await dbController.SelectQuery(sql);
+  res.send(results);
+});
+
 app.listen(5000);
