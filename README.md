@@ -6,7 +6,7 @@ Living With Spina Bifida (LWSB) is a social media support group for people with 
 
 To get started, install Node then run this code in the terminal:
 
-## npm i axios bcrypt body-parser concurrently cors express mysql2 nodemon react react-bootstrap react-dom react-router-dom react-script
+## `npm i axios bcrypt body-parser concurrently cors express mysql2 nodemon react react-bootstrap react-dom react-router-dom react-script`
 
 This will install all the required packages to run the application.
 
