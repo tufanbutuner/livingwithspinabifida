@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Axios from 'axios';
 
-export default function CreatePost() {
+const CreatePost = () => {
 
     // we use state to update the elements on the page
     const userId = localStorage.getItem('userId');
@@ -12,7 +12,7 @@ export default function CreatePost() {
     const submitPost = () => {
         // sending a request to our /create endpoint, which is route we want to reach
         // we pass the title and body information, (name of prop we are sending: for title send title)
-        Axios.post('http://localhost:5000/create', {userId: userId, title: title, content: content})
+        Axios.post('http://localhost:5000/create', { userId: userId, title: title, content: content });
     }
 
     return (
@@ -36,4 +36,6 @@ export default function CreatePost() {
             </div>
         </div>
     );
-}
+ }
+
+export default CreatePost;
