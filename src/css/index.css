@@ -10,7 +10,7 @@
 /* NAVBAR */
 
 .navbar {
-  padding: 35px;
+  padding: 50 px;
   display: flex;
   align-items: center;
   max-width: 100%;
@@ -20,6 +20,7 @@
 
 .navbar .links {
   margin-left: auto;
+  margin-right: 30px;
 }
 
 .navbar * {
@@ -30,6 +31,15 @@
   margin-left: 20px;
   text-decoration: none;
   padding: 5px;
+}
+
+.navbar h1 {
+  font-size: 25px;
+  padding: 10px;
+}
+
+.links a:hover {
+  text-decoration: none;
 }
 
 /* REGISTER PAGE */
@@ -216,9 +226,43 @@ textarea {
   margin-top: 50px;
 }
 
+.userList p {
+  color: #1E90FF;
+  margin-bottom: 0px;
+  font-size: 30px;
+}
+
+.userList h1 {
+  font-size: 20px;
+}
+
 /* SUPPORT PAGE */
 
 .supportHeader {
   text-align: center;
   margin-top: 50px;
+}
+
+/* COMMENTS MODAL */
+
+.comment-text {
+  color: #87CEFA;
+}
+
+.commentContent{
+  color: #1E90FF;
+}
+
+/* COMMENTS SECTION */
+
+.commentList {
+  padding: 20px;
+  margin-left: 50px;
+  margin-top: 10px;
+
+}
+
+.commentUsername {
+  font-weight: 800;
+  font-size: 20px;
 }
