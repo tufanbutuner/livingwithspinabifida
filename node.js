@@ -5,6 +5,8 @@ const cookieParser = require('cookie-parser');
 const dbController = require('./Controller/DatabaseController');
 const app = express();
 
+const port = process.env.PORT || 5000;
+
 app.use(cors({
   origin: "http://localhost:3000",
   methods: ["GET", "POST", "PUT"],
@@ -68,4 +70,4 @@ app.get('/getComments', async (req, res) => {
   res.send(results);
 });
 
-app.listen(5000);
+app.listen(port);
