@@ -8,7 +8,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(cors({
-  origin: "https://lwsb-v6aoj.ondigitalocean.app/",
+  origin: "https://zen-hermann-4eb407.netlify.app/",
   methods: ["GET", "POST", "PUT"],
   credentials: true
 }));
