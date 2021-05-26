@@ -12,7 +12,12 @@ const CreatePost = () => {
     const submitPost = () => {
         // sending a request to our /create endpoint, which is route we want to reach
         // we pass the title and body information, (name of prop we are sending: for title send title)
-        axios.post('/create', { userId: userId, title: title, content: content });
+        if (title && content !== "") {
+            axios.post('/create', { userId: userId, title: title, content: content });
+            alert('You have successfully made a post!');
+        } else {
+            alert("Please add text to the title and body!")
+        }
     }
 
     return (
