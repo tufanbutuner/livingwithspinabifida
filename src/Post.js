@@ -12,7 +12,7 @@ const CreatePost = () => {
     const submitPost = () => {
         // sending a request to our /create endpoint, which is route we want to reach
         // we pass the title and body information, (name of prop we are sending: for title send title)
-        Axios.post('http://localhost:5000/create', { userId: userId, title: title, content: content });
+        Axios.post('https://lwsb-v6aoj.ondigitalocean.app/create', { userId: userId, title: title, content: content });
     }
 
     return (

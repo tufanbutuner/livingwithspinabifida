@@ -9,7 +9,7 @@ function Search() {
     const submitSearch = () => {
         // sending a request to our /create endpoint, which is route we want to reach
         // we pass the title and body information, (name of prop we are sending: for title send title)
-        Axios.get('http://localhost:5000/users', { userResults, setUserResults });
+        Axios.get('https://lwsb-v6aoj.ondigitalocean.app/users', { userResults, setUserResults });
     }
 
     return (

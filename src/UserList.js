@@ -10,7 +10,7 @@ function UserList() {
 
     // Every time we reload the page, we make an Axios get request which changes when info in the db changes
     useEffect(() => {
-        Axios.get("http://localhost:5000/users").then((data) => {
+        Axios.get("https://lwsb-v6aoj.ondigitalocean.app/users").then((data) => {
             setUserList(data.data);
         });
     }, []);

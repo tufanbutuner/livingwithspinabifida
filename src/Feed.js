@@ -10,7 +10,7 @@ const Feed = () => {
 
     // Every time we reload the page, we make an Axios get request which changes when info in the db changes
     useEffect(() => {
-        Axios.get("http://localhost:5000/getPosts").then((data) => {
+        Axios.get("https://lwsb-v6aoj.ondigitalocean.app/getPosts").then((data) => {
             setList(data.data);
         });
     }, []);
