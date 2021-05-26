@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Axios from 'axios';
+import axios from 'axios';
 
 const CreatePost = () => {
 
@@ -12,7 +12,7 @@ const CreatePost = () => {
     const submitPost = () => {
         // sending a request to our /create endpoint, which is route we want to reach
         // we pass the title and body information, (name of prop we are sending: for title send title)
-        Axios.post('https://lwsb-v6aoj.ondigitalocean.app/create', { userId: userId, title: title, content: content });
+        axios.post('/create', { userId: userId, title: title, content: content });
     }
 
     return (

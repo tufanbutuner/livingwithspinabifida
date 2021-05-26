@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Axios from 'axios';
+import axios from 'axios';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Post from './Post';
@@ -20,7 +20,7 @@ const Comment = (props) =>
     const submitPost = () => {
         // sending a request to our /create endpoint, which is route we want to reach
         // we pass the title and body information, (name of prop we are sending: for userId send userId)
-        Axios.post('https://lwsb-v6aoj.ondigitalocean.app/comment', {postId: postId, userId: userId, content: content})
+        axios.post('/comment', {postId: postId, userId: userId, content: content})
     }
 
     return (

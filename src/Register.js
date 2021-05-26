@@ -12,7 +12,7 @@ const Register = () => {
 
     const submitHandler = async e => {
         e.preventDefault();
-        var result = await axios.post("https://lwsb-v6aoj.ondigitalocean.app/register", user);
+        var result = await axios.post("/register", user);
         console.log(result);
         history.push('/registered');
     }

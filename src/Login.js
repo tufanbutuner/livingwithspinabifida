@@ -15,7 +15,7 @@ const Login = () => {
     const submitHandler = async e => {
         e.preventDefault();
         // sending an axios post to node /login endpoint
-        var result = await axios.post("https://lwsb-v6aoj.ondigitalocean.app/login", user);
+        var result = await axios.post("/login", user);
         var data = result.data;
         console.log(data)
 

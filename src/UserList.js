@@ -1,4 +1,4 @@
-import Axios from 'axios';
+import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ function UserList() {
 
     // Every time we reload the page, we make an Axios get request which changes when info in the db changes
     useEffect(() => {
-        Axios.get("https://lwsb-v6aoj.ondigitalocean.app/users").then((data) => {
+        axios.get("/users").then((data) => {
             setUserList(data.data);
         });
     }, []);

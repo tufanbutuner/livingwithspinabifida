@@ -1,4 +1,4 @@
-import Axios from 'axios';
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Comment from './Comment';
 import CommentList from './CommentList';
@@ -10,7 +10,7 @@ const Feed = () => {
 
     // Every time we reload the page, we make an Axios get request which changes when info in the db changes
     useEffect(() => {
-        Axios.get("https://lwsb-v6aoj.ondigitalocean.app/getPosts").then((data) => {
+        axios.get("/getPosts").then((data) => {
             setList(data.data);
         });
     }, []);

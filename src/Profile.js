@@ -1,6 +1,5 @@
 import Card from 'react-bootstrap/Card'
 import Post from './Post';
-const axios = require('axios');
 
 function Profile() {
     const username = localStorage.getItem('username');
