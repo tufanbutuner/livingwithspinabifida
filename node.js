@@ -5,10 +5,10 @@ const cookieParser = require('cookie-parser');
 const dbController = require('./Controller/DatabaseController');
 const app = express();
 
-const port = process.env.PORT || 5000;
+const port = 5000;
 
 app.use(cors({
-  origin: "https://lwsb-v6aoj.ondigitalocean.app",
+  origin: "http://localhost:3000/",
   methods: ["GET", "POST", "PUT"],
   credentials: true
 }));

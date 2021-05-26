@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router';
 import LoggedIn from './LoggedIn';
-const axios = require('axios');
+import axios from 'axios';
 
 const Login = () => {
     const history = useHistory();
