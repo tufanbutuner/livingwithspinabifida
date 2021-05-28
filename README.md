@@ -19,10 +19,13 @@ Assuming Node and NPM are installed on your machine:
 
 1. Clone the code
 2. Navigate inside the project folder on terminal, where you will see a package.json file
-3. Do an npm install for installing all the project dependencies
-4. Do an npm install -g nodemon for installing all the project dependencies
+4. Do an npm install for installing all the project dependencies
 
-This will install all the required packages to run the application.
+```javascript
+npm install
+```
+
+This will install all the required packages to run the application. Use npm run dev to run the program.
 
 ```javascript
 npm run dev
