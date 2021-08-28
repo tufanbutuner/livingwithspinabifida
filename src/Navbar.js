@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import { isUserAuthenticated } from '../src/routes/ProtectedRoute';
+import { isUserAuthenticated } from './routes/ProtectedRoute';
 
 function Navbar() {
     return (
         <nav className="navbar">
-            <h1>Living with Spina Bifida</h1>
+            <h1 class="navbar-brand">Living with Spina Bifida</h1>
                 <div className="links">
                 <Link to="/">Home</Link>
                 <Link to="/profile">Profile</Link>

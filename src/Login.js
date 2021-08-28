@@ -21,8 +21,7 @@ const Login = () => {
         if (data.password != undefined ) {
             localStorage.setItem('userId', data.userId);
             localStorage.setItem('username', data.username);
-            localStorage.setItem('firstName', data.firstName);
-            localStorage.setItem('lastName', data.lastName);
+            localStorage.setItem('name', data.name);
             history.push('/profile');
         } else {
             alert('Incorrect username or password. Please try again');

@@ -3,19 +3,19 @@
 * {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  color: #87CEFA;
+  color: rgb(37, 37, 37);
 }
 
 
 /* NAVBAR */
 
 .navbar {
-  padding: 50 px;
+  padding: 70px;
   display: flex;
   align-items: center;
   max-width: 100%;
   margin: 0 auto;
-  background-color: #87CEFA;
+  background-color: #fafafa;
 }
 
 .navbar .links {
@@ -24,7 +24,11 @@
 }
 
 .navbar * {
-  color: white;
+  color: rgb(37, 37, 37);
+}
+
+.navbar-brand {
+  font-family: Integral CF, Arial, sans-serif;
 }
 
 .navbar a {
